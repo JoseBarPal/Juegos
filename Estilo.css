@@ -34,9 +34,9 @@ a:hover {
 .selecciones >div{
     display: flex;
     background-color: rgb(51,0,69);
-    width: 120px;
+    width: 250px;
     margin: 10px;
-    height: 30px;
+    height: 50px;
     text-align: center;
     align-items: center;
     justify-content: center;
@@ -145,3 +145,4 @@ button:hover {
     font-size: 1.1rem;
     font-weight: 600;
 }
+
