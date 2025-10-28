@@ -124,3 +124,4 @@ function jugarContraMaquina() {
 document.getElementById("Tirar").addEventListener("click", jugarContraMaquina);
 document.getElementById("Apostar").addEventListener("click", iniciarJuego);
 
+
