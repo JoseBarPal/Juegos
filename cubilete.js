@@ -95,6 +95,7 @@ function jugarContraMaquina() {
 
     // Tirada de la máquina
     let dadosMaquina = tirar5Dados();
+    for(let i=0;i<5;i++) document.getElementById("mdado_"+(i+1)).textContent = dadosMaquina[i];
     let jugadaMaquina = calcularJugada(dadosMaquina);
 
     // Determinar ganador
@@ -122,3 +123,4 @@ function jugarContraMaquina() {
 // --- Evento del botón ---
 document.getElementById("Tirar").addEventListener("click", jugarContraMaquina);
 document.getElementById("Apostar").addEventListener("click", iniciarJuego);
+
