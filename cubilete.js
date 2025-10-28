@@ -33,6 +33,7 @@ function tirar5Dados() {
         dados.push(nombresDados[Math.floor(Math.random()*6)]);
     }
     return dados;
+
 }
 
 // --- Función para calcular jugada y puntaje ---
@@ -123,5 +124,6 @@ function jugarContraMaquina() {
 // --- Evento del botón ---
 document.getElementById("Tirar").addEventListener("click", jugarContraMaquina);
 document.getElementById("Apostar").addEventListener("click", iniciarJuego);
+
 
 
