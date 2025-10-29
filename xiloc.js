@@ -2,6 +2,27 @@ var dado1 = 0;
 var dado2 = 0;
 var dado3 = 0;
 var novalido = "Jugada no válida, vuelve a tirar";
+var mdado1=0;
+var mdado2=0;
+var mdado3=0;
+var bet=0;
+var saldo=100;
+var jugadas=("CuLeBrItA":1,"A":2,"Ngs":3,"Rjs":4,"J":5,"Q":6,"K":7,"Xiloc":8);
+
+document.getElementById("saldoActual").innerHTML=saldo;
+
+//Función para definir la apuesta
+function apuesta(){
+    bet=prompt("Cuanto deseas apostar");
+    if(bet>apuesta){
+        alert("no tienes suficiente sald");
+    } else{
+        saldo=(saldo-bet);
+        document.getElementById("saldoActual").innerHTML=saldo;
+        document.getElementById("apuestaActual").innerHTML=bet;
+    }    
+}
+    
 
 // Función para tirar los dados con animación
 function tirardados() {
@@ -99,4 +120,107 @@ function tirardados() {
     }, 1000);
 }
 
+//Funcion para el tiro del CPU
+function mtirardados() {
+    
+    if(resultado===0){
+        alert("Tu jugada no es valida, vuelve a tirar hasta obtener una jugada valida");
+    } else{
+
+    const md1 = document.getElementById("mdado_1");
+    const md2 = document.getElementById("mdado_2");
+    const md3 = document.getElementById("mdado_3");
+    const resultado = document.getElementById("mresultado");
+    const boton = document.getElementById("mTirar");
+
+    // 🔹 [Inicio de animación]
+    boton.disabled = true;
+    resultado.innerHTML = "";
+    md1.classList.add("girando");
+    md2.classList.add("girando");
+    md3.classList.add("girando");
+
+    // Cambia el texto rápidamente durante 1 segundo
+    const manimacion = setInterval(() => {
+        md1.innerHTML = ["Ngs", "Rjs", "J", "Q", "K", "A"][Math.floor(Math.random() * 6)];
+        md2.innerHTML = ["Ngs", "Rjs", "J", "Q", "K", "A"][Math.floor(Math.random() * 6)];
+        md3.innerHTML = ["Ngs", "Rjs", "J", "Q", "K", "A"][Math.floor(Math.random() * 6)];
+    }, 100);
+
+    // Después de 1 segundo, se detiene la animación y se calcula el resultado real
+    setTimeout(() => {
+        clearInterval(manimacion);
+
+        md1.classList.remove("girando");
+        md2.classList.remove("girando");
+        md3.classList.remove("girando");
+
+        // 🔹 [Tu lógica original comienza aquí]
+        mdado1 = Math.floor(Math.random() * 6) + 1;
+        mdado2 = Math.floor(Math.random() * 6) + 1;
+        mdado3 = Math.floor(Math.random() * 6) + 1;
+
+        switch (mdado1) {
+            case 1: mdado1 = "Ngs"; break;
+            case 2: mdado1 = "Rjs"; break;
+            case 3: mdado1 = "J"; break;
+            case 4: mdado1 = "Q"; break;
+            case 5: mdado1 = "K"; break;
+            case 6: mdado1 = "A"; break;
+        }
+        switch (mdado2) {
+            case 1: mdado2 = "Ngs"; break;
+            case 2: mdado2 = "Rjs"; break;
+            case 3: mdado2 = "J"; break;
+            case 4: mdado2 = "Q"; break;
+            case 5: mdado2 = "K"; break;
+            case 6: mdado2 = "A"; break;
+        }
+        switch (mdado3) {
+            case 1: mdado3 = "Ngs"; break;
+            case 2: mdado3 = "Rjs"; break;
+            case 3: mdado3 = "J"; break;
+            case 4: mdado3 = "Q"; break;
+            case 5: mdado3 = "K"; break;
+            case 6: mdado3 = "A"; break;
+        }
+
+        md1.innerHTML = mdado1;
+        md2.innerHTML = mdado2;
+        md3.innerHTML = mdado3;
+
+        if (
+            (mdado1 == "K" && mdado2 == "Q" && mdado3 == "J") ||
+            (mdado1 == "K" && mdado3 == "Q" && mdado2 == "J") ||
+            (mdado2 == "K" && mdado1 == "Q" && mdado3 == "J") ||
+            (mdado2 == "K" && mdado3 == "Q" && mdado1 == "J") ||
+            (mdado3 == "K" && mdado1 == "Q" && mdado2 == "J") ||
+            (mdado3 == "K" && mdado2 == "Q" && mdado1 == "J")
+        ) {
+            mresultado.innerHTML = 'Xiloc';
+        } else if (mdado1 == mdado2) {
+            mresultado.innerHTML = mdado3;
+        } else if (mdado1 == mdado3) {
+            mresultado.innerHTML = mdado2;
+        } else if (mdado2 == mdado3) {
+            mresultado.innerHTML = mdado1;
+        } else if (
+            (mdado1 == "A" && mdado2 == "Ngs" && mdado3 == "Rjs") ||
+            (mdado1 == "A" && mdado3 == "Ngs" && mdado2 == "Rjs") ||
+            (mdado2 == "A" && mdado1 == "Ngs" && mdado3 == "Rjs") ||
+            (mdado2 == "A" && mdado3 == "Ngs" && mdado1 == "Rjs") ||
+            (mdado3 == "A" && mdado1 == "Ngs" && mdado2 == "Rjs") ||
+            (mdado3 == "A" && mdado2 == "Ngs" && mdado1 == "Rjs")
+        ) {
+            mresultado.innerHTML = "CuLeBrItA";
+        } else {
+            mresultado.innerHTML = novalido;
+        }
+        boton.disabled = false;
+    }, 1000);
+        
+    }    
+}
+
 document.getElementById("Tirar").addEventListener("click", tirardados);
+document.getElementById("mTirar").addEventListener("click", mtirardados);
