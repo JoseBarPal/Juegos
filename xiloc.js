@@ -119,11 +119,7 @@ function tirardados() {
 }
 
 //Funcion para el tiro del CPU
-function mtirardados() {
-    
-    if(resultado===0){
-        alert("Tu jugada no es valida, vuelve a tirar hasta obtener una jugada valida");
-    } else{
+function mtirardados() {    
 
     const md1 = document.getElementById("mdado_1");
     const md2 = document.getElementById("mdado_2");
@@ -217,9 +213,10 @@ function mtirardados() {
         boton.disabled = false;
     }, 1000);
         
-    }    
+ 
 }
 
 document.getElementById("Tirar").addEventListener("click", tirardados);
 document.getElementById("mTirar").addEventListener("click", mtirardados);
+
 
