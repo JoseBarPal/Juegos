@@ -202,3 +202,55 @@ button:hover {
   100% { transform: rotate(720deg) scale(1); }
 }
 
+#Tablero{
+    background-color: rgb(69,0,18);
+    border-radius: 5px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    justify-content: space-around;
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5); /* Sombra suave */
+    color: white;
+    font-size: x-large;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+/Estilo de cartas/
+
+#Tablero >div{
+    display: flex;
+    background-color: white;
+    border-radius:3px;
+    margin: 2px;
+    height: 40px;
+    padding: 2px;
+    width: 25px;
+    color: black;
+    
+}
+
+#mTirar{
+    border-radius: 2px;
+    background-color: purple;
+    color: white;
+    height: 40px;
+    width: 100px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5); /* Sombra suave */
+    font-size: larger;
+}
+
+#mresultado{
+    color: white;
+    font-size: x-large;
+    background-color: rgb(99,0,30);
+    border-radius: 5px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding: 10px;
+    margin-top: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5); /* Sombra suave */
+}
