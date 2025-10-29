@@ -3,12 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Xiloc</title>
     <link rel="stylesheet" href="Estilo.css">
 </head>
 <body>
     <a href="menu.html">Menú</a>
     <h1>Xiloc</h1>
+    <div id="infoJugador">
+        <div>Jugador: <span id="nombreUsuario"></span></div>
+        <div>Saldo: $<span id="saldoActual"></span></div>
+        <div>Apuesta: $<span id="apuestaActual"></span></div>
+    </div>
     <div id="cubilete">
         <div id="dado_1"><img src="A.ico" alt="default"></div>
         <div id="dado_2"><img src="A.ico" alt="default"></div>
@@ -16,8 +21,19 @@
     </div>
     <div id="botones">
         <button id="Tirar">Tirar</button>
+        <button type="button" onclick="apuesta()">Apostar</button>
+        <button id="mTirar">Tiro CPU</button>
     </div>
     <div id="resultado"></div>
+    <br>
+    <hr>
+    <br>
+    <div id="Jugada_CPU">
+        <div id="mdado_1"><img src="A.ico" alt="default"></div>        
+        <div id="mdado_2"><img src="A.ico" alt="default"></div>
+        <div id="mdado_3"><img src="A.ico" alt="default"></div>
+    </div>
+    <div id="mresultado"></div>
     <script src="xiloc.js"></script>
 </body>
 </html>
