@@ -1,12 +1,10 @@
-var dado1 = 0;
-var dado2 = 0;
-var dado3 = 0;
+//Dados del jugador
+let dado1 = 0, dado2 = 0, dado3 = 0;
 var novalido = "Jugada no válida, vuelve a tirar";
-var mdado1=0;
-var mdado2=0;
-var mdado3=0;
-var bet=0;
-var saldo=100;
+//Dados del CPU
+let mdado1=0, mdado2=0, mdado3=0;
+//Interfaz del jugador
+let bet=0, saldo=100;
 var jugadas=("CuLeBrItA":1,"A":2,"Ngs":3,"Rjs":4,"J":5,"Q":6,"K":7,"Xiloc":8);
 
 document.getElementById("saldoActual").innerHTML=saldo;
@@ -224,3 +222,4 @@ function mtirardados() {
 
 document.getElementById("Tirar").addEventListener("click", tirardados);
 document.getElementById("mTirar").addEventListener("click", mtirardados);
+
