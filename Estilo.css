@@ -2,6 +2,7 @@ html{
     background-color: rgb(0, 69, 16);
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
+
 h1{
     color: white;
     text-align: center;
@@ -86,7 +87,7 @@ a:hover {
 
 button{
 
-    border-radius: 2px;
+    border-radius: 30px;
     background-color: #330045;
     color: white;
     height: 40px;
@@ -218,7 +219,7 @@ button:hover {
     flex-direction: column;
 }
 
-/Estilo de cartas/
+/*Estilo de cartas*/
 
 #Tablero >div{
     display: flex;
@@ -233,8 +234,8 @@ button:hover {
 }
 
 #mTirar{
-    border-radius: 2px;
-    background-color: purple;
+    border-radius: 50px;
+    background-color: rgb(90, 5, 23);
     color: white;
     height: 40px;
     width: 100px;
