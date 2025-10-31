@@ -224,6 +224,7 @@ function mtirardados() {
                 // Jugada no válida: intentar de nuevo después de 1 segundo
                 mresultado.innerHTML = "Jugada no válida... tirando otra vez 🤖";
                 mjugada = 0;
+                mboton.disabled=true;
                 setTimeout(() => {
                     md1.classList.add("girando");
                     md2.classList.add("girando");
@@ -299,3 +300,4 @@ una nueva jugada (En este botón puedes incluir la función para calcular la apu
 document.getElementById("Tirar").addEventListener("click", tirardados);
 document.getElementById("mTirar").addEventListener("click", mtirardados);
 document.getElementById("reinicio").addEventListener("click", reinicio);
+
